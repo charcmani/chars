@@ -1,5 +1,5 @@
 import Title from "@/components/title";
-import { Card, Grid, Link, Tooltip } from "@mui/material"
+import { Box, Card, Grid, Link, Stack, Tooltip, Typography } from "@mui/material"
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -16,7 +16,7 @@ import CodeIcon from '@mui/icons-material/Code';
 
 export default function Home() {
   return (
-    <Grid container spacing={1} sx={{textAlign : 'center'}}>
+    <Grid container spacing={1} sx={{ textAlign: 'center' }}>
       <Grid item xs={6} md={4}>
       </Grid>
       <Grid item xs={6} md={4}>
@@ -24,35 +24,46 @@ export default function Home() {
       </Grid>
       <Grid item xs={6} md={4}>
       </Grid>
-      <Grid item xs={6} md={4}>
-        <Tooltip title="LinkedIn">
-          <Link href='https://www.linkedin.com/in/shubhanshu-mani-468306106/' target="_blank">
-            <Card variant="outlined">
-              <LinkedInIcon />
-            </Card>
-          </Link>
-        </Tooltip>
+      <Grid container item>
+        <Grid item xs={3}></Grid>
+        <Grid item xs={2}>
+          <Tooltip title="Github">
+            <Link href='https://github.com/charcmani' color="inherit" target="_blank">
+              <Box>
+                <GitHubIcon />
+              </Box>
+            </Link>
+          </Tooltip>
+        </Grid>
+        <Grid item xs={2}>
+          <Tooltip title="LinkedIn">
+            <Link href='https://www.linkedin.com/in/shubhanshu-mani-468306106/' color="inherit" target="_blank">
+              <Box>
+                <LinkedInIcon />
+              </Box>
+            </Link>
+          </Tooltip>
+        </Grid>
+        <Grid item xs={2}>
+          <Tooltip title="Codechef">
+            <Link href='https://www.codechef.com/users/shubhu1596' color="inherit" target="_blank">
+              <Box>
+                <CodeIcon />
+              </Box>
+            </Link>
+          </Tooltip>
+        </Grid>
+        <Grid item xs={3}></Grid>
       </Grid>
-      <Grid item xs={6} md={4}>
-        <Tooltip title="GitHub">
-          <Link href='https://github.com/charcmani' target="_blank">
-            <Card variant="outlined">
-              <GitHubIcon />
-            </Card>
-          </Link>
-        </Tooltip>
-      </Grid>
-      <Grid item xs={6} md={4}>
-        <Tooltip title="Codechef">
-          <Link href='https://www.codechef.com/users/shubhu1596' target="_blank">
-            <Card variant="outlined">
-              <CodeIcon />
-            </Card>
-          </Link>
-        </Tooltip>
-      </Grid>
-      <Grid item xs={6} md={12} sx={{ height: 'fill', textAlign: 'center' }}>
-        <Card variant="outlined"><h1>Everything in one EC2 instance</h1></Card>
+      <Grid item xs={4}></Grid>
+      <Grid item xs={4}>
+        <Box sx={{ paddingTop: '5vh' }}>
+          <center>
+          <Typography variant="h5">
+          Projects to be listed soon
+          </Typography>
+          </center>
+        </Box>
       </Grid>
     </Grid>
   )

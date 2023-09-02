@@ -1,21 +1,15 @@
-import { Avatar, Box, Card, CardHeader, Grid, IconButton } from "@mui/material"
+import { Avatar, Box, Card, CardHeader, Grid, IconButton, Typography } from "@mui/material"
 import { blue, grey, lightBlue, red } from "@mui/material/colors";
 
 export default function Title() {
     return <center>
-        <Box>
-            <CardHeader
-                avatar={
-                    <Avatar sx={{ bgcolor: grey[400] }}>
-                        SM
-                    </Avatar>
-                }
-                title="Shubhanshu Mani"
-                subheader="Software Developer"
-            />
+        <Box sx={{paddingTop:'35px', paddingBottom:'35px'}}>
+            <Typography variant="h4">
+                Shubhanshu Mani
+            </Typography>
+            <Typography variant="h6">
+                Software Developer
+            </Typography>
         </Box>
     </center>
 }
-
-
-// {/*  */}
