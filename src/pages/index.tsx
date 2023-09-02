@@ -24,7 +24,7 @@ export default function Home() {
       </Grid>
       <Grid item xs={6} md={4}>
       </Grid>
-      <Grid item xs={1} md={4}>
+      <Grid item xs={6} md={4}>
         <Tooltip title="LinkedIn">
           <Link href='https://www.linkedin.com/in/shubhanshu-mani-468306106/' target="_blank">
             <Card variant="outlined">
