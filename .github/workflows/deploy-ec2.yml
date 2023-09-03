@@ -30,4 +30,4 @@ jobs:
 
     - name: SSH into EC2 and run command
       run: |
-        ssh -i keyfile ubuntu@43.204.148.194 "echo 'Hello from GitHub Actions'"
+        ssh -i ~/.ssh/id_rsa ubuntu@43.204.148.194 "echo 'Hello from GitHub Actions'"
