@@ -1,0 +1,25 @@
+name: SSH into EC2 and Run Commands
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "$EC2_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa 43.204.148.194 >> ~/.ssh/known_hosts
+
+    - name: SSH into EC2 and run command
+      run: |
+        ssh -i ~/.ssh/id_rsa ubuntu@43.204.148.194 "echo 'Hello from GitHub Actions'"
